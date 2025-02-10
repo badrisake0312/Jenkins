@@ -1,0 +1,19 @@
+sudo apt update -y && sudo apt upgrade -y
+sudo apt install openjdk-17-jdk -y
+java -version
+wget -q -O - https://pkg.jenkins.io/debian/jenkins.io.key | sudo tee /etc/apt/trusted.gpg.d/jenkins.asc
+echo "deb https://pkg.jenkins.io/debian-stable binary/" | sudo tee /etc/apt/sources.list.d/jenkins.list
+sudo apt update -y
+sudo apt install jenkins -y
+sudo systemctl enable jenkins
+sudo systemctl start jenkins
+sudo systemctl status jenkins
+sudo ufw allow 8080
+sudo ufw enable
+http://<your-ec2-public-ip>:8080
+sudo cat /var/lib/jenkins/secrets/initialAdminPassword
+Troubleshooting:
+sudo journalctl -u jenkins -f
+sudo systemctl restart jenkins
+admin
+admin@123
