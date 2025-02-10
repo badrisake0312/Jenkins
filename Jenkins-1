@@ -17,3 +17,13 @@ sudo journalctl -u jenkins -f
 sudo systemctl restart jenkins
 admin
 admin@123
+Types of Build Triggers in Jenkins
+1️⃣ Poll SCM (Source Control Management)
+Jenkins periodically checks the source code repository (e.g., Git, SVN).
+If changes are detected, a new build is triggered.
+Configured using a cron schedule.
+Example schedule (H/5 * * * *) checks for changes every 5 minutes.
+2️⃣ GitHub/Webhook Trigger
+Jenkins listens for webhooks from GitHub/GitLab/Bitbucket.
+When a commit is pushed, a build is triggered immediately.
+Faster than Poll SCM since it doesn't repeatedly check the repo.
