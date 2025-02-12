@@ -1,0 +1,8 @@
+Dashboard >>Manage Jenkins >>Nodes >>New node
+curl -sO http://75.101.182.187:8080/jnlpJars/agent.jar
+nohup java -jar agent.jar -url http://75.101.182.187:8080/ -secret a34ded1a5e4258a10064c4f7b2a49a597bddbf0cbde3b8f01d63815b9a09120c -name maven -webSocket -workDir "/jenkins" &
+above command will run on background nohop command &
+processid will get generated 
+to stop this process
+kill 9- processid
+create new job 
